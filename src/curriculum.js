@@ -41,6 +41,10 @@ import lesson19a from '../content/19-01-lambda-map-filter.md?raw';
 import lesson19b from '../content/19-02-generateurs-et-yield.md?raw';
 import lesson20a from '../content/20-01-decorateurs-intro.md?raw';
 import lesson20b from '../content/20-02-wraps-et-usages.md?raw';
+import lesson21a from '../content/21-01-projet-contacts-cahier-des-charges.md?raw';
+import lesson21b from '../content/21-02-projet-contacts-implementation.md?raw';
+import lesson22a from '../content/22-01-projet-quiz-structure.md?raw';
+import lesson22b from '../content/22-02-projet-quiz-record-json.md?raw';
 
 import ex1Statement from '../exercises/ex-01/statement.md?raw';
 import ex1Starter from '../exercises/ex-01/starter.py?raw';
@@ -102,6 +106,12 @@ import ex19Tests from '../exercises/ex-19/tests.py?raw';
 import ex20Statement from '../exercises/ex-20/statement.md?raw';
 import ex20Starter from '../exercises/ex-20/starter.py?raw';
 import ex20Tests from '../exercises/ex-20/tests.py?raw';
+import ex21Statement from '../exercises/ex-21/statement.md?raw';
+import ex21Starter from '../exercises/ex-21/starter.py?raw';
+import ex21Tests from '../exercises/ex-21/tests.py?raw';
+import ex22Statement from '../exercises/ex-22/statement.md?raw';
+import ex22Starter from '../exercises/ex-22/starter.py?raw';
+import ex22Tests from '../exercises/ex-22/tests.py?raw';
 
 export const curriculum = [
   {
@@ -342,6 +352,30 @@ export const curriculum = [
     ],
     exercises: [
       { id: 'ex-20', title: 'Le décorateur @majuscule', moduleId: 'module-20', statement: ex20Statement, starter: ex20Starter, tests: ex20Tests },
+    ],
+  },
+  {
+    id: 'module-21',
+    title: 'Module 21 — Mini-projet : gestionnaire de contacts (SQLite)',
+    description: 'Projet guidé complet : cahier des charges + classe GestionnaireContacts persistante.',
+    lessons: [
+      { id: '21-1', title: 'Cahier des charges du projet', content: lesson21a },
+      { id: '21-2', title: 'Implémentation pas à pas', content: lesson21b },
+    ],
+    exercises: [
+      { id: 'ex-21', title: 'La classe GestionnaireContacts', moduleId: 'module-21', statement: ex21Statement, starter: ex21Starter, tests: ex21Tests },
+    ],
+  },
+  {
+    id: 'module-22',
+    title: 'Module 22 — Mini-projet : quiz avec record JSON',
+    description: 'Projet guidé : quiz en CLI avec input(), score, et meilleur score persisté en JSON.',
+    lessons: [
+      { id: '22-1', title: 'Structure du quiz', content: lesson22a },
+      { id: '22-2', title: 'Record sauvegardé en JSON', content: lesson22b },
+    ],
+    exercises: [
+      { id: 'ex-22', title: 'Record du quiz en JSON', moduleId: 'module-22', statement: ex22Statement, starter: ex22Starter, tests: ex22Tests },
     ],
   },
 ];
