@@ -21,6 +21,12 @@ import lesson9a from '../content/09-01-args-kwargs.md?raw';
 import lesson9b from '../content/09-02-portee-docstrings-annotations.md?raw';
 import lesson10a from '../content/10-01-classes-et-objets.md?raw';
 import lesson10b from '../content/10-02-heritage-et-polymorphisme.md?raw';
+import lesson11a from '../content/11-01-dataclasses-et-methodes-speciales.md?raw';
+import lesson11b from '../content/11-02-property-classmethod-staticmethod.md?raw';
+import lesson12a from '../content/12-01-heritage-multiple-et-mro.md?raw';
+import lesson12b from '../content/12-02-classes-abstraites-et-composition.md?raw';
+import lesson13a from '../content/13-01-tests-unitaires-unittest.md?raw';
+import lesson13b from '../content/13-02-bonnes-pratiques-tests.md?raw';
 
 import ex1Statement from '../exercises/ex-01/statement.md?raw';
 import ex1Starter from '../exercises/ex-01/starter.py?raw';
@@ -52,6 +58,15 @@ import ex9Tests from '../exercises/ex-09/tests.py?raw';
 import ex10Statement from '../exercises/ex-10/statement.md?raw';
 import ex10Starter from '../exercises/ex-10/starter.py?raw';
 import ex10Tests from '../exercises/ex-10/tests.py?raw';
+import ex11Statement from '../exercises/ex-11/statement.md?raw';
+import ex11Starter from '../exercises/ex-11/starter.py?raw';
+import ex11Tests from '../exercises/ex-11/tests.py?raw';
+import ex12Statement from '../exercises/ex-12/statement.md?raw';
+import ex12Starter from '../exercises/ex-12/starter.py?raw';
+import ex12Tests from '../exercises/ex-12/tests.py?raw';
+import ex13Statement from '../exercises/ex-13/statement.md?raw';
+import ex13Starter from '../exercises/ex-13/starter.py?raw';
+import ex13Tests from '../exercises/ex-13/tests.py?raw';
 
 export const curriculum = [
   {
@@ -172,6 +187,42 @@ export const curriculum = [
     ],
     exercises: [
       { id: 'ex-10', title: 'La classe Chien', moduleId: 'module-10', statement: ex10Statement, starter: ex10Starter, tests: ex10Tests },
+    ],
+  },
+  {
+    id: 'module-11',
+    title: 'Module 11 — POO avancée : dataclasses et décorateurs',
+    description: 'Dataclasses, méthodes spéciales (__add__, __eq__…), @property, @classmethod, @staticmethod.',
+    lessons: [
+      { id: '11-1', title: 'Dataclasses et méthodes spéciales', content: lesson11a },
+      { id: '11-2', title: '@property, @classmethod, @staticmethod', content: lesson11b },
+    ],
+    exercises: [
+      { id: 'ex-11', title: 'Dataclass Point avec __add__', moduleId: 'module-11', statement: ex11Statement, starter: ex11Starter, tests: ex11Tests },
+    ],
+  },
+  {
+    id: 'module-12',
+    title: 'Module 12 — Héritage multiple, ABC et composition',
+    description: 'MRO, super() chaîné, classes abstraites (ABC) et composition vs héritage.',
+    lessons: [
+      { id: '12-1', title: 'Héritage multiple et MRO', content: lesson12a },
+      { id: '12-2', title: 'Classes abstraites et composition', content: lesson12b },
+    ],
+    exercises: [
+      { id: 'ex-12', title: 'Classe abstraite Forme et Carre', moduleId: 'module-12', statement: ex12Statement, starter: ex12Starter, tests: ex12Tests },
+    ],
+  },
+  {
+    id: 'module-13',
+    title: 'Module 13 — Tests unitaires',
+    description: 'Écrire et exécuter des tests unitaires avec unittest : TestCase, assertions, setUp, assertRaises.',
+    lessons: [
+      { id: '13-1', title: 'Tests unitaires avec unittest', content: lesson13a },
+      { id: '13-2', title: 'Bonnes pratiques des tests', content: lesson13b },
+    ],
+    exercises: [
+      { id: 'ex-13', title: 'Écrire des tests unitaires', moduleId: 'module-13', statement: ex13Statement, starter: ex13Starter, tests: ex13Tests },
     ],
   },
 ];
