@@ -31,6 +31,12 @@ import lesson14a from '../content/14-01-module-random-nombre-mystere.md?raw';
 import lesson14b from '../content/14-02-boucle-de-jeu-et-tentatives.md?raw';
 import lesson15a from '../content/15-01-module-json.md?raw';
 import lesson15b from '../content/15-02-fichiers-et-mini-projet.md?raw';
+import lesson16a from '../content/16-01-fichiers-texte.md?raw';
+import lesson16b from '../content/16-02-module-csv.md?raw';
+import lesson17a from '../content/17-01-module-datetime.md?raw';
+import lesson17b from '../content/17-02-timedelta-et-formatage.md?raw';
+import lesson18a from '../content/18-01-sqlite-intro.md?raw';
+import lesson18b from '../content/18-02-sqlite-requetes.md?raw';
 
 import ex1Statement from '../exercises/ex-01/statement.md?raw';
 import ex1Starter from '../exercises/ex-01/starter.py?raw';
@@ -77,6 +83,15 @@ import ex14Tests from '../exercises/ex-14/tests.py?raw';
 import ex15Statement from '../exercises/ex-15/statement.md?raw';
 import ex15Starter from '../exercises/ex-15/starter.py?raw';
 import ex15Tests from '../exercises/ex-15/tests.py?raw';
+import ex16Statement from '../exercises/ex-16/statement.md?raw';
+import ex16Starter from '../exercises/ex-16/starter.py?raw';
+import ex16Tests from '../exercises/ex-16/tests.py?raw';
+import ex17Statement from '../exercises/ex-17/statement.md?raw';
+import ex17Starter from '../exercises/ex-17/starter.py?raw';
+import ex17Tests from '../exercises/ex-17/tests.py?raw';
+import ex18Statement from '../exercises/ex-18/statement.md?raw';
+import ex18Starter from '../exercises/ex-18/starter.py?raw';
+import ex18Tests from '../exercises/ex-18/tests.py?raw';
 
 export const curriculum = [
   {
@@ -257,6 +272,42 @@ export const curriculum = [
     ],
     exercises: [
       { id: 'ex-15', title: 'Sauvegarde JSON d\'une liste de courses', moduleId: 'module-15', statement: ex15Statement, starter: ex15Starter, tests: ex15Tests },
+    ],
+  },
+  {
+    id: 'module-16',
+    title: 'Module 16 — Fichiers texte et CSV',
+    description: 'Lire/écrire des fichiers, et manipuler des CSV avec le module csv.',
+    lessons: [
+      { id: '16-1', title: 'Lire et écrire des fichiers texte', content: lesson16a },
+      { id: '16-2', title: 'Le module csv', content: lesson16b },
+    ],
+    exercises: [
+      { id: 'ex-16', title: 'Moyenne d\'une colonne CSV', moduleId: 'module-16', statement: ex16Statement, starter: ex16Starter, tests: ex16Tests },
+    ],
+  },
+  {
+    id: 'module-17',
+    title: 'Module 17 — Dates et heures (datetime)',
+    description: 'Manipuler les dates : création, calculs avec timedelta, formatage strftime/strptime.',
+    lessons: [
+      { id: '17-1', title: 'Les dates avec datetime', content: lesson17a },
+      { id: '17-2', title: 'timedelta et formatage', content: lesson17b },
+    ],
+    exercises: [
+      { id: 'ex-17', title: 'Jours entre deux dates', moduleId: 'module-17', statement: ex17Statement, starter: ex17Starter, tests: ex17Tests },
+    ],
+  },
+  {
+    id: 'module-18',
+    title: 'Module 18 — Bases de données SQLite',
+    description: 'Créer une base, des tables, insérer et interroger des données en SQL avec sqlite3.',
+    lessons: [
+      { id: '18-1', title: 'SQLite : connexion et création de table', content: lesson18a },
+      { id: '18-2', title: 'SELECT, UPDATE, DELETE', content: lesson18b },
+    ],
+    exercises: [
+      { id: 'ex-18', title: 'Gestionnaire d\'utilisateurs SQLite', moduleId: 'module-18', statement: ex18Statement, starter: ex18Starter, tests: ex18Tests },
     ],
   },
 ];

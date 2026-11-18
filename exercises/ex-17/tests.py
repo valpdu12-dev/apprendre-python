@@ -1,0 +1,4 @@
+_check("jours_entre('01/01/2026', '31/01/2026') == 30", lambda: (_ for _ in ()).throw(AssertionError(f"obtenu: {jours_entre('01/01/2026', '31/01/2026')!r}")) if jours_entre("01/01/2026", "31/01/2026") != 30 else None)
+_check("jours_entre('31/01/2026', '01/01/2026') == 30", lambda: (_ for _ in ()).throw(AssertionError(f"obtenu: {jours_entre('31/01/2026', '01/01/2026')!r}")) if jours_entre("31/01/2026", "01/01/2026") != 30 else None)
+_check("jours_entre('25/12/2026', '25/12/2026') == 0", lambda: (_ for _ in ()).throw(AssertionError(f"obtenu: {jours_entre('25/12/2026', '25/12/2026')!r}")) if jours_entre("25/12/2026", "25/12/2026") != 0 else None)
+_check("jours_entre('01/01/2026', '01/01/2027') == 365", lambda: (_ for _ in ()).throw(AssertionError(f"obtenu: {jours_entre('01/01/2026', '01/01/2027')!r}")) if jours_entre("01/01/2026", "01/01/2027") != 365 else None)
