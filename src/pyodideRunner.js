@@ -14,6 +14,13 @@ export function loadPyodide(onProgress) {
         const pyodide = await window.loadPyodide({
           indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.26.4/full/',
         });
+        // Permet à input() de fonctionner dans le navigateur via une boîte de dialogue.
+        pyodide.setStdin({
+          stdin: () => {
+            const valeur = window.prompt('Saisie utilisateur :');
+            return valeur === null ? '' : valeur;
+          },
+        });
         resolve(pyodide);
       } catch (err) {
         pyodidePromise = null;
