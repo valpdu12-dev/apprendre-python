@@ -37,6 +37,10 @@ import lesson17a from '../content/17-01-module-datetime.md?raw';
 import lesson17b from '../content/17-02-timedelta-et-formatage.md?raw';
 import lesson18a from '../content/18-01-sqlite-intro.md?raw';
 import lesson18b from '../content/18-02-sqlite-requetes.md?raw';
+import lesson19a from '../content/19-01-lambda-map-filter.md?raw';
+import lesson19b from '../content/19-02-generateurs-et-yield.md?raw';
+import lesson20a from '../content/20-01-decorateurs-intro.md?raw';
+import lesson20b from '../content/20-02-wraps-et-usages.md?raw';
 
 import ex1Statement from '../exercises/ex-01/statement.md?raw';
 import ex1Starter from '../exercises/ex-01/starter.py?raw';
@@ -92,6 +96,12 @@ import ex17Tests from '../exercises/ex-17/tests.py?raw';
 import ex18Statement from '../exercises/ex-18/statement.md?raw';
 import ex18Starter from '../exercises/ex-18/starter.py?raw';
 import ex18Tests from '../exercises/ex-18/tests.py?raw';
+import ex19Statement from '../exercises/ex-19/statement.md?raw';
+import ex19Starter from '../exercises/ex-19/starter.py?raw';
+import ex19Tests from '../exercises/ex-19/tests.py?raw';
+import ex20Statement from '../exercises/ex-20/statement.md?raw';
+import ex20Starter from '../exercises/ex-20/starter.py?raw';
+import ex20Tests from '../exercises/ex-20/tests.py?raw';
 
 export const curriculum = [
   {
@@ -308,6 +318,30 @@ export const curriculum = [
     ],
     exercises: [
       { id: 'ex-18', title: 'Gestionnaire d\'utilisateurs SQLite', moduleId: 'module-18', statement: ex18Statement, starter: ex18Starter, tests: ex18Tests },
+    ],
+  },
+  {
+    id: 'module-19',
+    title: 'Module 19 — Lambda, map, filter et générateurs',
+    description: 'Fonctions anonymes, map/filter, générateurs avec yield et compréhensions dict/set.',
+    lessons: [
+      { id: '19-1', title: 'lambda, map, filter', content: lesson19a },
+      { id: '19-2', title: 'Générateurs (yield)', content: lesson19b },
+    ],
+    exercises: [
+      { id: 'ex-19', title: 'Générateur de nombres pairs', moduleId: 'module-19', statement: ex19Statement, starter: ex19Starter, tests: ex19Tests },
+    ],
+  },
+  {
+    id: 'module-20',
+    title: 'Module 20 — Les décorateurs',
+    description: 'Décorateurs @, wrapper, *args/**kwargs, functools.wraps, lru_cache et cas d\'usage.',
+    lessons: [
+      { id: '20-1', title: 'Introduction aux décorateurs', content: lesson20a },
+      { id: '20-2', title: '@wraps, lru_cache et usages', content: lesson20b },
+    ],
+    exercises: [
+      { id: 'ex-20', title: 'Le décorateur @majuscule', moduleId: 'module-20', statement: ex20Statement, starter: ex20Starter, tests: ex20Tests },
     ],
   },
 ];
