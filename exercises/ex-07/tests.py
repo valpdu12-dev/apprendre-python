@@ -1,0 +1,3 @@
+_check("compter_lettres('aab') == {'a': 2, 'b': 1}", lambda: (_ for _ in ()).throw(AssertionError(f"obtenu: {compter_lettres('aab')!r}")) if compter_lettres("aab") != {"a": 2, "b": 1} else None)
+_check("compter_lettres('Bonjour') == {'b': 1, 'o': 2, 'n': 1, 'j': 1, 'u': 1, 'r': 1}", lambda: (_ for _ in ()).throw(AssertionError(f"obtenu: {compter_lettres('Bonjour')!r}")) if compter_lettres("Bonjour") != {"b": 1, "o": 2, "n": 1, "j": 1, "u": 1, "r": 1} else None)
+_check("compter_lettres('a b!') == {'a': 1, 'b': 1}", lambda: (_ for _ in ()).throw(AssertionError(f"obtenu: {compter_lettres('a b!')!r}")) if compter_lettres("a b!") != {"a": 1, "b": 1} else None)
