@@ -1,6 +1,7 @@
 import { render } from '../main.js';
 import { esc } from '../router-helpers.js';
 import { runPython, loadPyodide } from '../pyodideRunner.js';
+import { createEditor } from '../editor.js';
 
 const STARTER = `# Bac à sable Python — écris ce que tu veux !
 print("Bonjour depuis le bac à sable 🐍")
@@ -20,7 +21,7 @@ export function renderSandbox() {
           <button class="btn secondary" id="btn-clear">🗑 Effacer la console</button>
           <span id="run-status" class="loading-pyodide"></span>
         </div>
-        <textarea id="editor" class="code-editor" spellcheck="false" style="min-height:380px;">${esc(STARTER)}</textarea>
+        <div id="editor" class="editor-container" style="min-height:380px;"></div>
       </div>
       <div>
         <h3 style="margin-top:0;">Console</h3>
@@ -30,7 +31,8 @@ export function renderSandbox() {
 
   render(html, 'sandbox');
 
-  const editor = document.getElementById('editor');
+  const editorEl = document.getElementById('editor');
+  const editorView = createEditor(editorEl, STARTER);
   const output = document.getElementById('output');
   const status = document.getElementById('run-status');
   const btnRun = document.getElementById('btn-run');
@@ -44,7 +46,7 @@ export function renderSandbox() {
     try {
       await loadPyodide((msg) => { status.textContent = msg; });
       status.textContent = 'Exécution…';
-      const result = await runPython(editor.value);
+      const result = await runPython(editorView.state.doc.toString());
       let htmlOut = '';
       if (result.output) htmlOut += esc(result.output);
       if (result.error) htmlOut += `<span class="ko">${esc(result.error)}</span>\n`;

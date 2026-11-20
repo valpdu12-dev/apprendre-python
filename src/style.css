@@ -133,6 +133,23 @@ footer {
   tab-size: 4;
 }
 
+/* CodeMirror 6 */
+.editor-container {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  min-height: 320px;
+}
+.editor-container .cm-editor {
+  min-height: 320px;
+  max-height: 60vh;
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  background: #0b1220;
+}
+.editor-container .cm-editor.cm-focused { outline: 2px solid var(--accent); outline-offset: -2px; }
+.editor-container .cm-scroller { overflow: auto; }
+
 .toolbar { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; margin: 0.75rem 0; }
 
 .output {

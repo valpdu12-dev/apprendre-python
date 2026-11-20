@@ -3,6 +3,7 @@ import { findExercise, esc } from '../router-helpers.js';
 import { renderMarkdown } from '../markdown.js';
 import { runExercise, loadPyodide } from '../pyodideRunner.js';
 import { markExerciseDone, isExerciseDone } from '../progress.js';
+import { createEditor } from '../editor.js';
 
 export function renderExercise(exId) {
   const found = findExercise(exId);
@@ -23,7 +24,7 @@ export function renderExercise(exId) {
           <button class="btn secondary" id="btn-reset">↺ Remettre le code de départ</button>
           <span id="run-status" class="loading-pyodide"></span>
         </div>
-        <textarea id="editor" class="code-editor" spellcheck="false">${esc(exercise.starter)}</textarea>
+        <div id="editor" class="editor-container"></div>
       </div>
       <div>
         <h3 style="margin-top:0;">Console</h3>
@@ -33,14 +34,15 @@ export function renderExercise(exId) {
 
   render(html, 'cours');
 
-  const editor = document.getElementById('editor');
+  const editorEl = document.getElementById('editor');
+  const editorView = createEditor(editorEl, exercise.starter);
   const output = document.getElementById('output');
   const status = document.getElementById('run-status');
   const btnRun = document.getElementById('btn-run');
   const btnReset = document.getElementById('btn-reset');
 
   btnReset.addEventListener('click', () => {
-    editor.value = exercise.starter;
+    editorView.dispatch({ changes: { from: 0, to: editorView.state.doc.length, insert: exercise.starter } });
     output.innerHTML = '<span class="info">Code de départ restauré.</span>';
   });
 
@@ -51,7 +53,7 @@ export function renderExercise(exId) {
     try {
       await loadPyodide((msg) => { status.textContent = msg; });
       status.textContent = 'Exécution…';
-      const result = await runExercise(editor.value, exercise.tests);
+      const result = await runExercise(editorView.state.doc.toString(), exercise.tests);
       let htmlOut = '';
       if (result.output) htmlOut += esc(result.output) + '\n';
       if (result.error) htmlOut += `<span class="ko">${esc(result.error)}</span>\n`;
